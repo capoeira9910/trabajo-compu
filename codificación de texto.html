@@ -1,0 +1,76 @@
+<H1> CODIFICACIÓN DE TEXTO</H1>
+<p> Vamos a encriptar un texto como proyecto para demostrar una de las funciones que hemos aprendido sobre la ciberseguridad, en ese caso utilizaremos un método de cifrado creado personalmente para transformar una palabra en algo ilegible.
+</p>
+<ol> 
+  <li> <p>Escogemos una palabra en este caso: encriptación </p> </li>
+  <li> <p>Separamos las letras y después mediante una tabla de valores aplicamos cada valor asignado a cada letra dentro de un paréntesis. Esta tabla de valores se puede visualizar en el excel adjunto que es un extracto de la verdadera tabla.
+ </p> 
+  <p>e/n/c/r/i/p/t/a/c/i/o/n----(11)(20)(9)(2)(27)(1)(6)(18)(9)(27)(8)(20)</p>
+</li>
+  <li> <p>Para continuar encriptando la palabra pasamos a las operaciones matemáticas donde en una tabla de operaciones matemáticas básicas tiene asignado unas letras del abecedario, para dichas operaciones hay un total de 2^12 posibilidades donde puede ser 1(se hace la operación para obtener el resultado anterior, es decir, conseguir el número de la tabla anterior) o 0(las operaciones son nulas y las letras desaparecen juntando los números como están, es decir si tiene 0L0B5, el número será 005 o 5), en este caso para facilitar el encriptado manual escogimos la posibilidad 4096 donde todas las letras tienen valor 0.
+ </p> 
+    <p> 1(0A1D1)---2(0L2J0)---3 (0A0E9)---4 (0F0G2)---5 (0H2I7)---6(0B0J1)---7(0B0D6)---8(0G1I8)---9 (0B0G9)---10(0F2D7)---11(0A0E8)---12 (0B2E0)       
+</p></li>
+  <li> <p> Después de poner las letras para las operaciones matemáticas traduciremos los que tenemos a código binario 
+</p>
+  <ol>
+    <li> <p>(00110000 01000001 00110001 01000100 00110001)
+</p></li>
+     <li> <p>(00110000 01001100 00110010 01001010 00110000)
+</p></li>
+     <li> <p>(00110000 01000001 00110000 01000101 00111001)
+</p></li>
+     <li> <p>(00110000 01000110 00110000 01000111 00110010)
+</p></li>
+     <li> <p>(00110000 01001000 00110010 01001001 00110111)
+</p></li>
+     <li> <p>(00110000 01000010 00110000 01001010 00110001)
+</p></li>
+     <li> <p>(00110000 01000010 00110000 01000100 00110110)</p></li>
+     <li> <p>(00110000 01000111 00110001 01001001 00111000)
+</p></li>
+     <li> <p>(00110000 01000010 00110000 01000111 00111001)
+</p></li>
+     <li> <p>(00110000 01000110 00110010 01000100 00110111)
+</p></li>
+     <li> <p>(00110000 01000001 00110000 01000101 00111000)
+</p></li>
+     <li> <p>(00110000 01000010 00110010 01000101 00110000)
+</p></li>
+    </ol>
+  </li>
+  <li> <p> Para terminar de encriptar modificaremos el código binario, los ceros equivale a un número cualquiera elevado al número de 0 que tiene y los 1 en este caso se sumaran todos, se modificarán entre los ceros y unos que haya juntos y se separarán con una barra, utilizaremos doble barra para indicar un espacio en el código de cifrado.
+    <ol> 
+      <li> <p>(45²/2/34⁴//54/1/5⁵/1//23²/2/4³/1//89/1/55³/1/22²//43²/2/45³/1)
+</p></li>
+      <li> <p>(72²/2/647⁴//33/1/55²/2/33²//456²/2/34²/1/12//34/1/77²/1/475/1/13//44²/2/4⁴)
+</p></li>
+      <li> <p>(72²/2/647⁴//33/1/55²/2/33²//456²/2/34²/1/12//34/1/77²/1/475/1/13//44²/2/4⁴)
+</p></li>
+      <li> <p>(72²/2/647⁴//33/1/55²/2/33²//456²/2/34²/1/12//34/1/77²/1/475/1/13//44²/2/4⁴)
+</p></li>
+      <li> <p>(56^2/2/45^4//12/1/68^2/1/99^3//56^2/2/45^2/1/8//5/1/68^2/1/77^2/1//98^2/2/00/3)
+</p></li>
+      <li> <p>(7^2/2/6^4//6/1/55^4/1/3//5^2/2/67^4//99/1/34^2/1/33/1/56//67^2/2/46^3/1)
+</p></li>
+      <li> <p>(5^2/2/6^4//4/1/5^4/1/8//6^2/2/5^4//9/1/6^3/1/1^2//3^2/2/8/2/5)
+</p></li>
+      <li> <p>(5^2/2/5^4//9/1/4^3/3//9^2/2/5^3/1//6/1/6^2/1/7^2/1//0^2/3/3^3)
+</p></li>
+      <li> <p>(5^2/2/7^4//3/1/5^4/1/0//3^2/2/9^4//0/1/0^3/3//9^2/3/6^2/1)</p></li>
+      <li> <p>(34^2/2/67^4//7/1/6^3/2/9//6^2/2/8^2/1/4//7/1/8^3/1/7^2//5^2/2/4/3)
+</p></li>
+      <li> <p>(5^2/2/35^4//7/1/67^5/1//78^2/2/5^4//5/1/7^3/1/0/1//56^2/3/1^3)</p></li>
+      <li> <p>(57^2/2/87^4//10/1/5^4/1/0//44^2/2/2^2/1/4//5/1/6^3/1/8/1//34^2/2/54^4)
+</p></li>
+      
+    </ol>
+</p> </li>
+  <li> <p>Por último lo dejaremos todo junto para que parezca más un texto  </p>
+    <p>(45²/2/34⁴//54/1/5⁵/1//23²/2/4³/1//89/1/55³/1/22²//43²/2/45³/1)(72²/2/647⁴//33/1/55²/2/33²//456²/2/34²/1/12//34/1/77²/1/475/1/13//44²/2/4⁴)(35²/2/345⁴//7/1/21⁵/1//456^2/2/765^4//4/1/45^3/1/0/1//7^2/3/78^2/1)(3^2/2/5^4//2/1/6^3/2/8//4^2/2/5^4//1/1/7^3/3//5^2/2/8^2/1/0)(56^2/2/45^4//12/1/68^2/1/99^3//56^2/2/45^2/1/8//5/1/68^2/1/77^2/1//98^2/2/00/3)(7^2/2/6^4//6/1/55^4/1/3//5^2/2/67^4//99/1/34^2/1/33/1/56//67^2/2/46^3/1)(5^2/2/6^4//4/1/5^4/1/8//6^2/2/5^4//9/1/6^3/1/1^2//3^2/2/8/2/5)(5^2/2/5^4//9/1/4^3/3//9^2/2/5^3/1//6/1/6^2/1/7^2/1//0^2/3/3^3)(5^2/2/7^4//3/1/5^4/1/0//3^2/2/9^4//0/1/0^3/3//9^2/3/6^2/1)(34^2/2/67^4//7/1/6^3/2/9//6^2/2/8^2/1/4//7/1/8^3/1/7^2//5^2/2/4/3)(5^2/2/35^4//7/1/67^5/1//78^2/2/5^4//5/1/7^3/1/0/1//56^2/3/1^3)(57^2/2/87^4//10/1/5^4/1/0//44^2/2/2^2/1/4//5/1/6^3/1/8/1//34^2/2/54^4)
+</p>
+    <p>Este método de encriptado se asemeja más al tipo homomórfico porque es necesario hacer operaciones matemáticas mientras se encripta, es algo largo pero a su vez el rango que posibilidades que tiene el verdadero código hace bastante difícil hallar el valor de cada llave necesaria para cada paso.
+</p>
+</li>
+
+</ol>
